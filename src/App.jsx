@@ -19,8 +19,7 @@ function App() {
   const sectionStyles = { 
     backgroundColor: usuario.color, 
     padding: "20px",
-    border: "2px",
-    borderColor: "white",
+    border: "solid 2px yellow",
   }
 
   return (  
