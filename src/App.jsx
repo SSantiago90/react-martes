@@ -1,9 +1,6 @@
 import './App.css'
+import Item from './components/Item'
 
-// * Vite js COMPILA/TRANSPILA archivos JSX -> JS y HTML
-
-//Componente principal APP.jsx
-// class -> palabra reservada en JS
 function App() {
   const usuario = {
     name: "Luciana",
@@ -23,8 +20,7 @@ function App() {
   }
 
   return (  
-    <>
-    { /* inline style */  }
+    <>   
     <section style={sectionStyles}>
       <h1>Hola mundo</h1>
       <h2>Bienvenido { usuario.name } a tu dashboard</h2>      
@@ -34,13 +30,26 @@ function App() {
           El estado del pago de tu servicio está: { isUserPaymentOK() }
         </p>
       </div>
+      <hr/>
+       <h2>Clase 2: Componentes</h2>
 
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </section>
+        {/* Attributos HTML -> Props */}
+        <div className="flex-row">
+
+        <Item           
+          title="Remera" 
+          price={ 2000 }
+          img="https://acdn-us.mitiendanube.com/stores/002/866/300/products/remera-artless-c6cb7d6317fbf8784217495849023518-1024-1024.jpg"
+          />
+        <Item title="Gorro" price={1200.50} img="https://i.pinimg.com/736x/26/e2/e4/26e2e494eaea862aaa11f1403bdf621e.jpg"/>
+        <Item title="Zapatilla" price={3500} img="https://www.moov.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw539467d5/products/NI_554724-122/NI_554724-122-1.JPG"/>    
+        </div>
+
+        </section>
     </>
   )
 }
+
+
 
 export default App
