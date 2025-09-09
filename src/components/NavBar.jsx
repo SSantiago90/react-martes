@@ -1,10 +1,14 @@
+import CartWidget from "./CartWidget";
+import './NavBar.css'
 export default function NavBar(){
-  return <nav>
-    <h2>Tienda.com</h2>
-    <ul>
+  return <nav className="nav-bar">
+    <p className="nav-logo">Tienda.com</p>
+    <ul className="nav-menu">
       <li>Remera</li>
       <li>Gorros</li>
     </ul>
-    {/* Component CartWidget */}
+    <div className="nav-cart">
+      <CartWidget />
+    </div>
   </nav>
 }

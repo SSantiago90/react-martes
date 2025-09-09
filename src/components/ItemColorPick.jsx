@@ -1,9 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function ItemColorPick(){
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState("#3eb61dff");
 
-  /* Arrow Function () => {} */  
+  // * 1 Montaje del componente
+  // * 2 updates/actualizaciones del componente -> cambios de estado/props
+  // * 3 Desmontaje
+  console.log("Renderizando componente <ItemColorPick>")
+
+  // ?  Effect / side-effect / Tarea de montaje
+  useEffect( ()=>{
+    console.warn("🟥Tarea compleja/conexiones a servicios/fetch de APIs")
+    
+    /* const botonPrueba = document.getElementById("boton-prueba")
+    console.log(botonPrueba) */
+  }, [])
+
+  
   return (
     <div>
       <div>
@@ -13,7 +26,7 @@ export default function ItemColorPick(){
         <button onClick={ () => setColor("#82b951ff") }>Verde</button>
       </div>
       <p>Color seleccionado: 
-        <span style={ { backgroundColor: color, width: "10px", height: "10px", display: "inner-block", padding: "2px"} }></span>
+        <span style={ { backgroundColor: color, width: "15px", height: "15px", display: "block", padding: "10px"} }></span>
       </p>
     </div>
   )
