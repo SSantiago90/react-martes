@@ -7,15 +7,13 @@ Para clonar este proyecto:
     npm install
     npm run dev
 
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Pre-entrega Nº 2
+ 
+ - Instalar react-router (npm i react-router)
+ - Configurar en el componente App la navegación con los componentes: BrowserRouter, Routes, Route
+ - Genera links con el componente Link para poder navegar
+ - Crear ItemDetailContainer, mostrando los detalles de un producto
+ - Crear Item, que representa la Card de cada producto dentro del listado
+ - En IDC, leer la URL con useParams(), obtener el ID y buscar un unico producto con ese ID
+ - EN ILC, leer la URL con useParams(), obtener la cteogria y buscar un listado de productos segun esa categoria
+ - Tanto ItemDetail como ItemList, deben leer los datos de forma asíncrona ( useEffect - useState)

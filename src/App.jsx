@@ -1,48 +1,42 @@
 import './App.css'
-import ItemListContainer from './components/ItemListContainer'
-import NavBar from './components/NavBar'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import NavBar from './components/NavBar/NavBar'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import NotFound from './components/NotFound'
 
 function App() {
-  const usuario = {
-    name: "Luciana",
-    age: "20",
-    color: "#4f4e80ff"
-  }
-
-  function isUserPaymentOK(){
-    // ....
-    return "Todo ok👌"
-  }
-
-  const sectionStyles = { 
-    backgroundColor: usuario.color, 
-    padding: "20px",
-    border: "solid 2px yellow",
-    display: "none",
-  }
+  // * 1: Encapsular toda la app con BrowserRouter
+  // * 2. Definimos el area a hacer navegable con Routes
+  // * 3. Definimos routas con el componente Route -> cada path/url muestra un element/contenido
 
   return (  
-    <div>   
-    <NavBar/>
-    <ItemListContainer greeting="Bienvenido a mi tienda" />
-    
-    <section style={sectionStyles}>     
-      <h2>Bienvenido { usuario.name } - Código clase 1 & 2</h2>      
-      <p>Hola, Luciana, tienes {usuario.age} años </p>      
-      <div className="card">       
-        <p>
-          El estado del pago de tu servicio está: { isUserPaymentOK() }
-        </p>
-      </div>
-      <hr/>
-        {/* Attributos HTML -> Props */}
-        <div className="flex-row">
-        </div>
+    <main>   
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route 
+            path="/" 
+            element={  <ItemListContainer greeting="Bienvenido a mi tienda" />  } />            
+            <Route
+              path="/detalle/:idParam"      
+              element={ <ItemDetailContainer />} />
+            <Route
+              path="/category/:categParam"
+              element={ <ItemListContainer greeting="Categoría de Productos"/>}
+            />
 
-    </section>
-    </div>
-  )
-}
+            <Route
+              path="/cart"
+              element={ <div><h1>Carrito de compras</h1> Proceder a comprar</div>}
+            />  
+           <Route path="*" element={ <NotFound />} /> 
+        </Routes>
+
+      </BrowserRouter>
+    
+    </main>
+  )}
 
 
 

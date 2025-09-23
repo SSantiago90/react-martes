@@ -1,27 +1,36 @@
 // * Mostrar el listado de items/productos de nuestra tienda
 // * de forma dinámica usando Array.map()
 
-import getProducts from "../data/mockAPI";
+import getProducts, { getProductsByCategory } from "../../data/mockAPI";
 import Item from "./Item";
 import { useEffect, useState} from "react"
+import './ItemListContainer.css'
+import { useParams } from "react-router";
 
 export default function ItemListContainer( props ){
   const [products, setProducts] = useState([]);
- 
+  const { categParam } = useParams();
+  
+
   useEffect( ()=>{
+    if(categParam === undefined ){
       console.log("1. Peticion de datos")
       const promiseData = getProducts();
       promiseData.then( (respuesta)=>{   
         console.log("3. Datos recibidos...", respuesta)
         setProducts(respuesta)
-
+        
       }).catch( (error) => alert(`Error ${error}`))
-  }, [])
+    }
+    else {
+      getProductsByCategory(categParam).then( response => setProducts(response))
+    }
+  }, [categParam])
    
   return <section>
     <h2>{props.greeting}</h2>
     <p>Nuestros productos</p>
-    <div style={ { display: "flex", flexWrap: "wrap", justifyContent: "center"} }>
+    <div className="item-list">
       {
         products.map( function(item) 
         { return <Item 

@@ -1,183 +1,184 @@
+/* {id, title, price, img, category, stock} */
 const products = [
   {
     id: 1,
-    title: 'Set de Herramientas de Jardinería',
-    price: 45.99,
-    img: '/imgs/set-jardineria.jpeg',
-    category: 'Hogar y Jardín',
-    stock: 50,
-    description: 'Incluye pala, rastrillo y tijeras de podar de alta resistencia.'
+    title: 'Auriculares Inalámbricos con Cancelación de Ruido',
+    price: 149.99,
+    img: 'https://placehold.co/600x400/2C3E50/FFFFFF?text=Auriculares',
+    category: 'Electrónica',
+    stock: 40,
+    description: 'Sonido inmersivo y hasta 30 horas de batería. Conexión Bluetooth 5.2.'
   },
   {
     id: 2,
-    title: 'Mesa de Exterior Plegable',
-    price: 89.50,
-    img: '/imgs/mesa-de-exterior.jpg',
-    category: 'Hogar y Jardín',
+    title: 'Teclado Mecánico RGB',
+    price: 89.90,
+    img: 'https://placehold.co/600x400/E74C3C/FFFFFF?text=Teclado',
+    category: 'Electrónica',
     stock: 25,
-    description: 'Mesa de plástico reforzado, perfecta para comidas al aire libre.'
+    description: 'Switches Blue para una sensación táctil y auditiva. Iluminación personalizable.'
   },
   {
     id: 3,
-    title: 'Silla de Jardín Apilable',
-    price: 35.00,
-    img: 'https://placehold.co/400x400/581845/FFFFFF?text=Silla+Jardín',
-    category: 'Hogar y Jardín',
-    stock: 80,
-    description: 'Silla de resina apilable, fácil de guardar y limpiar.'
+    title: 'Camiseta de Algodón Orgánico',
+    price: 25.00,
+    img: 'https://placehold.co/600x400/2ECC71/FFFFFF?text=Camiseta',
+    category: 'Ropa',
+    stock: 150,
+    description: 'Camiseta básica de alta calidad, suave al tacto y respetuosa con el medio ambiente.'
   },
   {
     id: 4,
-    title: 'Barbacoa de Carbón Portátil',
-    price: 120.75,
-    img: 'https://placehold.co/400x400/FFC300/000000?text=Barbacoa',
-    category: 'Hogar y Jardín',
-    stock: 15,
-    description: 'Barbacoa de tamaño compacto, ideal para balcones y terrazas.'
+    title: 'Vaqueros Slim Fit',
+    price: 59.95,
+    img: 'https://placehold.co/600x400/3498DB/FFFFFF?text=Vaqueros',
+    category: 'Ropa',
+    stock: 80,
+    description: 'Jeans modernos y cómodos con un toque de elasticidad para mayor confort.'
   },
   {
     id: 5,
-    title: 'Manguera de Riego Extensible',
-    price: 29.99,
-    img: 'https://placehold.co/400x400/C70039/FFFFFF?text=Manguera',
-    category: 'Hogar y Jardín',
-    stock: 65,
-    description: 'Se expande hasta 3 veces su tamaño original con la presión del agua.'
+    title: 'Novela de Misterio: "La Sombra del Viento"',
+    price: 22.50,
+    img: 'https://placehold.co/600x400/8E44AD/FFFFFF?text=Libro+Misterio',
+    category: 'Libros',
+    stock: 120,
+    description: 'Una emocionante novela de Carlos Ruiz Zafón que te atrapará desde la primera página.'
   },
   {
     id: 6,
-    title: 'Luz Solar para Jardín',
-    price: 15.00,
-    img: 'https://placehold.co/400x400/DAF7A6/000000?text=Luz+Solar',
-    category: 'Hogar y Jardín',
-    stock: 110,
-    description: 'Iluminación LED de bajo consumo, se carga con energía solar.'
+    title: 'Libro de Cocina Mediterránea',
+    price: 35.00,
+    img: 'https://placehold.co/600x400/F1C40F/000000?text=Cocina',
+    category: 'Libros',
+    stock: 90,
+    description: 'Más de 100 recetas saludables y deliciosas inspiradas en la dieta mediterránea.'
   },
   {
     id: 7,
-    title: 'Maceta de Cerámica Grande',
-    price: 22.50,
-    img: 'https://placehold.co/400x400/900C3F/FFFFFF?text=Maceta',
-    category: 'Hogar y Jardín',
-    stock: 70,
-    description: 'Maceta de cerámica de alta calidad, perfecta para plantas grandes.'
+    title: 'Balón de Fútbol Profesional',
+    price: 45.00,
+    img: 'https://placehold.co/600x400/16A085/FFFFFF?text=Balón+Fútbol',
+    category: 'Deportes',
+    stock: 200,
+    description: 'Balón de tamaño oficial, diseñado para un rendimiento óptimo en cualquier superficie.'
   },
   {
     id: 8,
-    title: 'Abono Orgánico 5kg',
-    price: 18.00,
-    img: 'https://placehold.co/400x400/581845/FFFFFF?text=Abono',
-    category: 'Hogar y Jardín',
-    stock: 90,
-    description: 'Mejora la salud del suelo y el crecimiento de las plantas.'
+    title: 'Set de Mancuernas Ajustables',
+    price: 199.00,
+    img: 'https://placehold.co/600x400/D35400/FFFFFF?text=Mancuernas',
+    category: 'Deportes',
+    stock: 30,
+    description: 'Ajusta el peso de 2.5kg a 24kg con un simple giro. Ahorra espacio.'
   },
   {
     id: 9,
-    title: 'Cortacésped Eléctrico',
-    price: 210.00,
-    img: 'https://placehold.co/400x400/FFC300/000000?text=Cortacésped',
-    category: 'Hogar y Jardín',
-    stock: 12,
-    description: 'Cortacésped potente y ligero, ideal para jardines de tamaño mediano.'
+    title: 'Smartwatch con GPS',
+    price: 180.75,
+    img: 'https://placehold.co/600x400/7F8C8D/FFFFFF?text=Smartwatch',
+    category: 'Electrónica',
+    stock: 50,
+    description: 'Monitoriza tu actividad física, ritmo cardíaco y recibe notificaciones en tu muñeca.'
   },
   {
     id: 10,
-    title: 'Sistema de Riego Automático',
-    price: 55.75,
-    img: 'https://placehold.co/400x400/C70039/FFFFFF?text=Riego',
-    category: 'Hogar y Jardín',
-    stock: 30,
-    description: 'Programable para regar en horarios específicos, ahorrando agua.'
+    title: 'Zapatillas de Running',
+    price: 110.00,
+    img: 'https://placehold.co/600x400/2980B9/FFFFFF?text=Zapatillas',
+    category: 'Ropa',
+    stock: 65,
+    description: 'Amortiguación avanzada y diseño ligero para corredores de todos los niveles.'
   },
   {
     id: 11,
-    title: 'Asiento de Sofá de Palet',
-    price: 60.00,
-    img: 'https://placehold.co/400x400/DAF7A6/000000?text=Sofá+Palet',
-    category: 'Hogar y Jardín',
-    stock: 45,
-    description: 'Cojín de exterior resistente al agua, diseñado para sofás de palets.'
+    title: 'Biografía: "Steve Jobs" por Walter Isaacson',
+    price: 28.99,
+    img: 'https://placehold.co/600x400/9B59B6/FFFFFF?text=Biografía',
+    category: 'Libros',
+    stock: 70,
+    description: 'La vida del visionario cofundador de Apple, basada en más de 40 entrevistas.'
   },
   {
     id: 12,
-    title: 'Parasol con Base',
-    price: 75.00,
-    img: 'https://placehold.co/400x400/900C3F/FFFFFF?text=Parasol',
-    category: 'Hogar y Jardín',
-    stock: 20,
-    description: 'Parasol de 3 metros de diámetro, con protección UV.'
+    title: 'Esterilla de Yoga Antideslizante',
+    price: 39.99,
+    img: 'https://placehold.co/600x400/1ABC9C/FFFFFF?text=Esterilla+Yoga',
+    category: 'Deportes',
+    stock: 110,
+    description: 'Hecha de materiales ecológicos, proporciona un agarre y comodidad excelentes.'
   },
   {
     id: 13,
-    title: 'Mesa de Centro de Bambú',
-    price: 95.00,
-    img: 'https://placehold.co/400x400/581845/FFFFFF?text=Mesa+Bambú',
-    category: 'Hogar y Jardín',
-    stock: 35,
-    description: 'Elegante mesa de centro de bambú, ideal para la sala de estar.'
+    title: 'Cámara de Seguridad WiFi',
+    price: 65.50,
+    img: 'https://placehold.co/600x400/34495E/FFFFFF?text=Cámara+WiFi',
+    category: 'Electrónica',
+    stock: 85,
+    description: 'Vigila tu hogar desde tu móvil con resolución 1080p, visión nocturna y audio bidireccional.'
   },
   {
     id: 14,
-    title: 'Sillón Colgante',
-    price: 180.00,
-    img: 'https://placehold.co/400x400/FFC300/000000?text=Sillón+Colgante',
-    category: 'Hogar y Jardín',
-    stock: 10,
-    description: 'Sillón colgante de ratán con cojín acolchado, perfecto para relajarse.'
+    title: 'Sudadera con Capucha',
+    price: 49.99,
+    img: 'https://placehold.co/600x400/C0392B/FFFFFF?text=Sudadera',
+    category: 'Ropa',
+    stock: 95,
+    description: 'Sudadera de felpa suave y cálida, perfecta para un look casual y cómodo.'
   },
   {
     id: 15,
-    title: 'Estantería de Metal',
-    price: 49.99,
-    img: 'https://placehold.co/400x400/C70039/FFFFFF?text=Estantería',
-    category: 'Hogar y Jardín',
-    stock: 55,
-    description: 'Estantería de 5 niveles, ideal para garajes o almacenes.'
+    title: 'Banda de Resistencia Elástica',
+    price: 15.00,
+    img: 'https://placehold.co/600x400/E67E22/FFFFFF?text=Banda',
+    category: 'Deportes',
+    stock: 300,
+    description: 'Set de 5 bandas con diferentes niveles de resistencia para un entrenamiento completo.'
   },
   {
     id: 16,
-    title: 'Kit de Cultivo Urbano',
-    price: 38.00,
-    img: 'https://placehold.co/400x400/DAF7A6/000000?text=Cultivo+Urbano',
-    category: 'Hogar y Jardín',
-    stock: 60,
-    description: 'Todo lo necesario para cultivar hierbas aromáticas en casa.'
+    title: 'Libro de Arte: "La Historia del Arte"',
+    price: 55.00,
+    img: 'https://placehold.co/600x400/F39C12/000000?text=Arte',
+    category: 'Libros',
+    stock: 50,
+    description: 'Un recorrido completo por la historia del arte mundial, desde la prehistoria hasta hoy.'
   },
   {
     id: 17,
-    title: 'Robot Aspirador',
-    price: 250.00,
-    img: 'https://placehold.co/400x400/900C3F/FFFFFF?text=Robot+Aspirador',
-    category: 'Hogar y Jardín',
-    stock: 25,
-    description: 'Aspira y friega de forma automática, controlable desde el móvil.'
+    title: 'Mouse Ergonómico Vertical',
+    price: 42.00,
+    img: 'https://placehold.co/600x400/BDC3C7/000000?text=Mouse',
+    category: 'Electrónica',
+    stock: 60,
+    description: 'Diseñado para reducir la tensión en la muñeca y mejorar la postura de la mano.'
   },
   {
     id: 18,
-    title: 'Set de Toallas de Baño',
-    price: 30.00,
-    img: 'https://placehold.co/400x400/581845/FFFFFF?text=Toallas',
-    category: 'Hogar y Jardín',
-    stock: 100,
-    description: 'Toallas de algodón de alta absorción, en un set de 3.'
+    title: 'Gorra de Béisbol Clásica',
+    price: 19.99,
+    img: 'https://placehold.co/600x400/27AE60/FFFFFF?text=Gorra',
+    category: 'Ropa',
+    stock: 180,
+    description: 'Gorra de algodón ajustable con logo bordado. Disponible en varios colores.'
   },
   {
     id: 19,
-    title: 'Espejo de Pared Grande',
-    price: 70.00,
-    img: 'https://placehold.co/400x400/FFC300/000000?text=Espejo',
-    category: 'Hogar y Jardín',
-    stock: 40,
-    description: 'Espejo con marco de madera, ideal para salas o pasillos.'
+    title: 'Cuerda para Saltar de Alta Velocidad',
+    price: 12.50,
+    img: 'https://placehold.co/600x400/8E44AD/FFFFFF?text=Cuerda+Saltar',
+    category: 'Deportes',
+    stock: 250,
+    description: 'Ideal para cardio, CrossFit y entrenamiento de agilidad. Longitud ajustable.'
   },
   {
     id: 20,
-    title: 'Fuente de Agua Decorativa',
-    price: 135.00,
-    img: 'https://placehold.co/400x400/C70039/FFFFFF?text=Fuente',
-    category: 'Hogar y Jardín',
-    stock: 8,
-    description: 'Fuente de agua para exterior, con iluminación LED.'
+    title: 'Diccionario de Inglés-Español',
+    price: 29.95,
+    img: 'https://placehold.co/600x400/2C3E50/FFFFFF?text=Diccionario',
+    category: 'Libros',
+    stock: 130,
+    description: 'Edición de bolsillo con más de 100,000 palabras, frases y traducciones.'
   }
 ];
 

@@ -1,0 +1,23 @@
+  .item-list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+      }
+      .item-list-container__loading {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .item-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        
+      }
+      .item-list > * {
+        background-color: var(--b-bg-2);
+        border-radius: 0.25rem;
+        padding: 1rem;
+      }
