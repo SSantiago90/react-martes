@@ -2,11 +2,13 @@ import { useParams } from "react-router";
 import ItemColorPick from "../ItemColorPick";
 import { getProductById } from "../../data/mockAPI";
 import { useEffect, useState } from "react";
+import { cartContext } from "../../context/cartContext";
+import { useContext } from "react";
 
 function ItemDetailContainer(){  
-  const { idParam } = useParams();
   const [product, setProduct] = useState({ loading: true});
-
+  const { idParam } = useParams();
+  const { addItem }= useContext(cartContext)
 
   useEffect( () => {
     getProductById(idParam)
@@ -28,7 +30,7 @@ function ItemDetailContainer(){
       <p className="item-card-price">Precio: ${product.price}</p>
       <p style={{ fontSize: "12px", opacity: "0.6"}}>{product.description}</p>
       <ItemColorPick />    
-      <button>Agregar al carrito</button>  
+      <button onClick={ () => addItem(product) }>Agregar al carrito</button>  
       <hr/>     
     </div>
   )
