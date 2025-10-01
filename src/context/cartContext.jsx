@@ -29,7 +29,6 @@ export function CartProvider( { children }){
       newCart.push(newItem)
       alert("Agregaste al carrito!")
     }
-
     setCartItems(newCart)
   }
 
@@ -44,6 +43,10 @@ export function CartProvider( { children }){
     setCartItems(newCart)
   }
   
+  // countTotalPrice()
+  // removeUnitFromItem()
+  // clearCart()
+
   return (
     <cartContext.Provider value={{ cartItems, addItem, countCartItems, removeItem }}>
         { children }        
