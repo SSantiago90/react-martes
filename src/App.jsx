@@ -6,19 +6,19 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import NotFound from './components/NotFound'
 import { CartProvider } from './context/cartContext'
 import CartContainer from './components/CartContainer/CartContainer'
+import { subirProductosAFirestore } from './data/firebase'
 
 
 function App() {
- 
-
+  
   return (  
     <main>   
       <CartProvider>
         <BrowserRouter>
           <NavBar/>
-         {/*  <MyButton>
-            <h2>Click para comprar</h2>
-          </MyButton> */}
+          <button onClick={subirProductosAFirestore}>
+            Exportar array
+          </button>
           <Routes>
             <Route 
               path="/" 

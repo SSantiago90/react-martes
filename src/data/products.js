@@ -2,10 +2,10 @@
 const products = [
   {
     id: 1,
-    title: 'Auriculares Inalámbricos con Cancelación de Ruido',
+    title: 'Mesa de Exterior',
     price: 149.99,
-    img: 'https://placehold.co/600x400/2C3E50/FFFFFF?text=Auriculares',
-    category: 'Electrónica',
+    img: '/imgs/mesa-de-exterior.jpg',
+    category: 'Hogar',
     stock: 40,
     description: 'Sonido inmersivo y hasta 30 horas de batería. Conexión Bluetooth 5.2.'
   },

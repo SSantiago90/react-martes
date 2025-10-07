@@ -45,7 +45,7 @@ export function CartProvider( { children }){
   
   // countTotalPrice()
   // removeUnitFromItem()
-  // clearCart()
+  // clearCart()  
 
   return (
     <cartContext.Provider value={{ cartItems, addItem, countCartItems, removeItem }}>
