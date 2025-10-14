@@ -2,31 +2,22 @@ import { useContext, useState } from "react"
 import { cartContext } from "../../context/cartContext"
 import { Link } from "react-router"
 import { createOrder } from "../../data/firebase";
+import FormCheckout from "./FormCheckout";
 
 function CartContainer(){
   const [orderCreatedId, setOrderCreated] = useState(false);
   
   const { cartItems, removeItem } = useContext(cartContext);
 
-  async function handleCheckout(){
-      // * { buyer: {}, cartItems: [..], total: 999, date: new Date()  }
-      const buyer = { name: "Luciana", email: "lu@yahoo.com", phone: "123123123"};
+  async function handleCheckout(buyer){
+      // * { buyer: {}, cartItems: [..], total: 999, date: new Date()  }     
       const total = 9999;
 
       const newOrderConfirmed = await createOrder( { cartItems, total, buyer, date: new Date()} )
       console.log(newOrderConfirmed.toJSON());
 
-      // 1. Alert / sweet-alert / toast
       alert(`Gracias por tu compra! tu id de la orden es: ${newOrderConfirmed.id}`)
-
-      // 2. Renderizado condicional
       setOrderCreated(newOrderConfirmed.id)
-
-      // 3. Redirigir a otro componente
-      // useNavigate() -> /orders/UZGWodoNZNt9D69bO6uL
-      // <OrderContainer> -> getDoc() -> estado de la orden
-
-      // TODO: VACIAR CARRITO!
   } 
 
   if (orderCreatedId){
@@ -67,11 +58,8 @@ function CartContainer(){
       </div>
       
       <button>Vaciar carrito</button>
-      <button onClick={ handleCheckout }>Confirmar compra</button>
-      
-      <Link to="/checkout">
-        <button>Checkout - TODO</button>
-      </Link>
+      <FormCheckout handleCheckout={ handleCheckout } />
+     
     </section>
   )
 }

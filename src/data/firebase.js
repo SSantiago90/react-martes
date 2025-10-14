@@ -3,7 +3,15 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
 import products from "./products";
 
-const firebaseConfig = { };
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIRESTORE_APIKEY,
+  authDomain: import.meta.env.VITE_FIRESTORE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_FIRESTORE_PROEJECTID,
+  storageBucket: import.meta.env.VITE_FIRESTORE_BUCKET,
+  messagingSenderId: "836080654787",
+  appId: import.meta.env.VITE_FIRESTORE_APPID
+};
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -30,6 +38,12 @@ export async function getProducts(){
   return dataDocs;
 }
 
+
+
+/**
+ * Retorna un producto de firestore
+ * @param idParam {string} id: representa el id del producto
+ */
 export async function getProductById(idParam){
   // 1 -> Referencia a UN document -> getDoc(ref)
   const docRef = doc(db, "products", idParam)
