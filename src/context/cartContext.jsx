@@ -13,8 +13,8 @@ export function CartProvider( { children }){
   const [cartItems, setCartItems] = useState([]);
   // ? CRUD -> Create/Read/Update/Delete 
 
-  function addItem(newItem) {
-    const quantityCount = 1;
+  function addItem(newItem, quantityCount) {
+    
     //cartItems.push( {newItem: "Item"} ) -> MAL❌
     const newCart = structuredClone(cartItems)
     const isInCart = cartItems.some(item => item.id === newItem.id)
@@ -45,10 +45,12 @@ export function CartProvider( { children }){
   
   // countTotalPrice()
   // removeUnitFromItem()
-  // clearCart()  
+  function clearCart(){
+    setCartItems([])
+  }
 
   return (
-    <cartContext.Provider value={{ cartItems, addItem, countCartItems, removeItem }}>
+    <cartContext.Provider value={{ cartItems, addItem, countCartItems, removeItem, clearCart }}>
         { children }        
     </cartContext.Provider>
   )

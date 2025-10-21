@@ -6,24 +6,33 @@ import { useParams } from "react-router";
 
 export default function ItemListContainer( props ){
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { categParam } = useParams();
   
+  useEffect( () =>{
+    setIsLoading(true);
+    setError(null);
+    const promiseData = categParam === undefined ? getProducts() : getProductsByCategory(categParam);
 
-  useEffect( ()=>{
-    if(categParam === undefined ){
-      console.log("1. Peticion de datos")
-      const promiseData = getProducts();
-      promiseData.then( (respuesta)=>{   
-        console.log("3. Datos recibidos...", respuesta)
-        setProducts(respuesta)
-        
-      }).catch( (error) => alert(`Error ${error}`))
-    }
-    else {
-      getProductsByCategory(categParam).then( response => setProducts(response)).catch( err => alert(err))
-    }
+    promiseData.then( (respuesta)=>{
+      setProducts(respuesta)
+    }).catch( (error) => {
+      setError(error.message);
+      console.error(error);
+    }).finally( () => {
+      setIsLoading(false);
+    })
   }, [categParam])
    
+  if (isLoading) {
+    return <h2>Cargando productos...</h2>
+  }
+
+  if (error) {
+    return <h2>Error: {error}</h2>
+  }
+
   return <section>
     <h2>{props.greeting}</h2>
     <p>Nuestros productos</p>

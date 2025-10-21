@@ -6,7 +6,7 @@ const products = [
     price: 149.99,
     img: '/imgs/mesa-de-exterior.jpg',
     category: 'Hogar',
-    stock: 40,
+    stock: 3,
     description: 'Sonido inmersivo y hasta 30 horas de batería. Conexión Bluetooth 5.2.'
   },
   {

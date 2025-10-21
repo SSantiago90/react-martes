@@ -3,7 +3,7 @@ import ItemColorPick from '../ItemColorPick';
 import { Link } from 'react-router'; 
 
 function Item( { id, title, img, price, description } ) {  
-  
+
   return (
     <div className="item-card">
       <h3 className="item-card-title"> {title} </h3>

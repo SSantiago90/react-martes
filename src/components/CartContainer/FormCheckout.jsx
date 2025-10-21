@@ -1,52 +1,60 @@
 import { useState } from "react";
 
-export default function FormCheckout(props) {
-  const [formData, setFormData] = useState({
-     username: "", email: "", phone: ""
-  })
+export default function FormCheckout(props) {   
+   const [formData, setFormData] = useState(
+      { username: "", phone: "", email: ""}
+   );
 
-  console.log(formData)
+   function handleInputChange(event){
+      const { value, name } = event.target
+      // ? formData.username ==  formData["username"]
+      const newFormData = {...formData}
+      newFormData[name] = value;
+      setFormData(newFormData)
+   }
 
-  function handleSubmit(evt){
-    evt.preventDefault();
-    console.log("Formulario enviado", formData)
-    props.handleCheckout(formData)
-  }
+   function resetForm(){
+     setFormData({ username: "", phone: "", email: ""});
+   }
 
-  function handleInputChange(evt){
-    const value = evt.target.value
-    const inputName = evt.target.name
-    // ? formData.username ->  formData["username"]
-    const newFormData = { ...formData}
-    newFormData[inputName] = value;
-    setFormData(newFormData)
-  }
+   function handleSubmit(event){
+      event.preventDefault();
+      alert("Form enviado...")
+      props.handleCheckout(formData)
+   }
 
+   function handleNumberInputChange(event){
+      console.log(event.key);
+      ( ! [1,2,3,4,5,6,7,8,9,0].includes( Number(event.key))) && event.preventDefault() ;     
+   }
+   
   return(
-    <form onSubmit={ handleSubmit } style={{ padding: "12px 8px", margin: "15px 5px", border: "solid 1px gray"}}>
-       <label>Nombre
-          <input onChange={handleInputChange} required name="username" type="text" value={formData.username} placeholder="Santiago"/>
-       </label>
-       <label>Email
-          <input onChange={handleInputChange} required name="email" type="email" value={formData.email} placeholder="@"/>
-       </label>
-       <label>Phone
-          <input onChange={handleInputChange} required  name="phone" type="tel" value={formData.phone} placeholder="123123"/>
-       </label>
-
-       <button type="">
-          Confirmar
-       </button>
-       <button 
-       onClick={ () => setFormData({username: "", email: "", phone: ""})}
-        type="button">
-          Reset
-       </button>
-
-    </form>
+   <form onSubmit={ handleSubmit }>
+      <label>Nombre
+        <input 
+        value={formData.username}
+         onChange={handleInputChange}
+         type="text" 
+         name="username" />
+      </label>
+      <label>Email
+        <input 
+        value={formData.email}
+        onChange={handleInputChange}
+        type="email" 
+        name="email" />
+      </label>
+      <label>Teléfono
+        <input       
+        value={formData.phone}
+         onChange={handleInputChange}   
+         onKeyDown={ handleNumberInputChange }          
+         type="tel" 
+         name="phone" 
+        />
+      </label>
+      <button type="submit">Enviar</button>
+      <button type="button" onClick={resetForm}>Limpiar Form</button>
+   </form>
   )
 }
-
-//* Controlled components/froms
-// ? useForms
-// ? Formik

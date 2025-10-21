@@ -40,15 +40,22 @@ export async function getProducts(){
 
 
 
+// * JSDOC
 /**
  * Retorna un producto de firestore
  * @param idParam {string} id: representa el id del producto
+ * @return {Promise} Promise que resuelve con los datos del documento de Firestore
  */
 export async function getProductById(idParam){
   // 1 -> Referencia a UN document -> getDoc(ref)
   const docRef = doc(db, "products", idParam)
   const documentSnapshot = await getDoc(docRef);
-  return { id: documentSnapshot.id, ...documentSnapshot.data()}  
+
+  if (documentSnapshot.exists()) {
+    return { id: documentSnapshot.id, ...documentSnapshot.data()}
+  }  
+  
+  throw new Error("Producto no encontrado.");
 }
 
 export async function getProductsByCategory(categParam){
