@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import NotFound from './components/NotFound'
 import { CartProvider } from './context/cartContext'
 import CartContainer from './components/CartContainer/CartContainer'
-import { subirProductosAFirestore } from './data/firebase'
 
 
 function App() {
@@ -15,10 +14,7 @@ function App() {
     <main>   
       <CartProvider>
         <BrowserRouter>
-          <NavBar/>
-          <button onClick={subirProductosAFirestore}>
-            Exportar array
-          </button>
+          <NavBar/>         
           <Routes>
             <Route 
               path="/" 
